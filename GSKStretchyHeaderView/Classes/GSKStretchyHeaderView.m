@@ -272,7 +272,11 @@ static const CGFloat kNibDefaultMaximumContentHeight = 240;
     if (newStretchFactor != self.stretchFactor) {
         self.stretchFactor = newStretchFactor;
         [self didChangeStretchFactor:newStretchFactor];
-        [self.stretchDelegate stretchyHeaderView:self didChangeStretchFactor:newStretchFactor];
+        
+        if ( [self.stretchDelegate respondsToSelector:@selector(stretchyHeaderView:didChangeStretchFactor:)] ){
+            [self.stretchDelegate stretchyHeaderView:self didChangeStretchFactor:newStretchFactor];
+        }
+
     }
     
     self.needsLayoutContentView = NO;
