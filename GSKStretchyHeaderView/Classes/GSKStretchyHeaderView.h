@@ -127,6 +127,7 @@ typedef NS_ENUM(NSUInteger, GSKStretchyHeaderViewExpansionMode) {
 
 @protocol GSKStretchyHeaderViewStretchDelegate <NSObject>
 
+@optional
 /**
  *  Called when the stretchy header view's stretch factor changes
  *
